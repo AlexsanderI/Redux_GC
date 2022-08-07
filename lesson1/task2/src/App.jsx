@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-// import ThemedButton from './ThemedButton';
 import { UserContext } from './user-context';
 
 class App extends React.Component {
@@ -14,9 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <UserContext.Provider value={this.state.UserData}>
-        <div className="page">
-          <Header />
-        </div>
+        <Header />
       </UserContext.Provider>
     );
   }
