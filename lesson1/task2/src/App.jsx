@@ -13,7 +13,9 @@ class App extends React.Component {
   render() {
     return (
       <UserContext.Provider value={this.state.UserData}>
-        <Header />
+        <div className="page">
+          <Header />
+        </div>
       </UserContext.Provider>
     );
   }
