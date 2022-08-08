@@ -4,7 +4,7 @@ import { UserContext } from './user-context';
 
 class App extends React.Component {
   state = {
-    UserData: {
+    userData: {
       name: 'Nikola Tesla',
       avatar_url: 'https://avatars3.githubusercontent.com/u10001',
     },
