@@ -1,8 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App.jsx';
+import store from './store';
+import { addUser, deleteUser } from './users.actions';
 
-const rootElement = document.querySelector('#root');
+store.dispatch(addUser({ id: 1, name: 'Tom' }));
+store.dispatch(addUser({ id: 2, name: 'Joe' }));
 
-ReactDOM.render(<App />, rootElement);
+store.subscribe(() => {
+  const state = store.getState();
+
+  console.log(state);
+});
+
+console.log(store.getState());
+
+store.dispatch(deleteUser(4));
