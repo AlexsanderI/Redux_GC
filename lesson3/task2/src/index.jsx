@@ -1,8 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App.jsx';
+import { store, increment, decrement, reset } from './counter';
 
-const rootElement = document.querySelector('#root');
+store.subscribe(() => console.log(store.getState()));
 
-ReactDOM.render(<App />, rootElement);
+store.dispatch(increment());
+store.dispatch(decrement());
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(increment());
