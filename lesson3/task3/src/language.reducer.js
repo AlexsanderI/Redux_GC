@@ -1,4 +1,4 @@
-import { SET_LANGUAGE } from './languag.actions';
+import { SET_LANGUAGE } from './language.actions';
 
 // eslint-disable-next-line import/prefer-default-export
 export const languagReducer = (state = 'en', action) => {
