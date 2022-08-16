@@ -5,13 +5,13 @@ import * as counterActions from '../counter.actions';
 const Counter = ({ counter, increment, decrement, reset }) => {
   return (
     <div className="counter">
-      <button data-action="decrease" className="counter__button" onClick={increment}>
+      <button data-action="decrease" className="counter__button" onClick={decrement}>
         -
       </button>
       <span className="counter__value" onClick={reset}>
         {counter}
       </span>
-      <button data-action="increase" className="counter__button" onClick={decrement}>
+      <button data-action="increase" className="counter__button" onClick={increment}>
         +
       </button>
     </div>
