@@ -9,4 +9,7 @@ export const users = [
   { id: 12345678, name: 'Bom', age: 21 },
   { id: 123456789, name: 'DOM', age: 22 },
   { id: 1234567890, name: 'Toretto', age: 60 },
+  { id: 1253, name: 'Rob', age: 32 },
+  { id: 12334, name: 'Rim', age: 45 },
+  { id: 12344556789, name: 'DOM', age: 22 },
 ];
