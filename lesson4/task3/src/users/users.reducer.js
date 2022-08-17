@@ -9,7 +9,7 @@ const getUsersPage = (pageNumber, amount) => {
 const initalState = {
   usersList: users,
   usersPage: getUsersPage(0, 3),
-  currentPage: 1,
+  currentPage: 0,
 };
 
 const usersListReducer = (state = initalState, action) => {

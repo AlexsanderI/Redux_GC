@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Pagination = ({ currentPage, goPrev, goNext, totalItems, itemsPerPage }) => {
-  const noLess = currentPage > 1;
+  const noLess = currentPage > 0;
   const noMore = totalItems / currentPage > 3;
   console.log(currentPage, itemsPerPage);
   return (
@@ -9,7 +9,7 @@ const Pagination = ({ currentPage, goPrev, goNext, totalItems, itemsPerPage }) =
       <button className="btn" onClick={goPrev} disabled={!noLess}>
         {noLess && '←'}
       </button>
-      <span className="pagination__page">{currentPage}</span>
+      <span className="pagination__page">{currentPage + 1}</span>
       <button className="btn" onClick={goNext} disabled={!noMore}>
         {noMore && '→'}
       </button>
