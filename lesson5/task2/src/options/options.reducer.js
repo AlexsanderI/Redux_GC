@@ -35,6 +35,7 @@ export const options = [
 
 const initialState = {
   optionsList: options,
+  selected: [],
 };
 
 const optionsReducer = (state = initialState, action) => {

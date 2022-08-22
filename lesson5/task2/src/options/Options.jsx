@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { optionsListSelector } from './options.selectors';
 
 const Options = ({ title, options }) => (
   <div className="options">
@@ -28,7 +29,7 @@ Options.propTypes = {
 
 const mapState = state => {
   return {
-    options: state.options.optionsList,
+    options: optionsListSelector(state),
   };
 };
 
