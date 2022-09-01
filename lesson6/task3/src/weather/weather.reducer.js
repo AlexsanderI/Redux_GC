@@ -1,4 +1,4 @@
-import { CITIES_DATE_RECIEVED } from './cities.actions';
+import { CITIES_DATE_RECIEVED } from './weather.actions';
 
 const initialData = {
   citiesData: null,
