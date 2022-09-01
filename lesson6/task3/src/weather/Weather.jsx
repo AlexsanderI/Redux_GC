@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Сities from './Сities';
+import Сities from '../Сities';
 import * as citiesActions from './weather.actions';
 import { isCitiesSelector } from './weather.selectors';
 
