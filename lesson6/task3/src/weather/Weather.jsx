@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import Сities from '../Сities';
 import * as citiesActions from './weather.actions';
 import { isCitiesSelector } from './weather.selectors';
 
@@ -20,7 +19,6 @@ const Weather = ({ cityData, getWeatherData }) => {
             <span className="city__name">{city.name}</span>
             <span className="city__temperature">{city.temperature} F</span>
           </li>
-          // <Сities key={city.id} {...city} />
         ))}
       </ul>
     </main>
