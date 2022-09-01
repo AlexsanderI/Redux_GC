@@ -8,7 +8,7 @@ export const userDataRecived = citiesData => ({
     citiesData,
   },
 });
-export const fetchUserDate = () =>
+export const getWeatherData = () =>
   function (dispatch) {
     getUserData().then(citiesData => {
       dispatch(userDataRecived(citiesData));

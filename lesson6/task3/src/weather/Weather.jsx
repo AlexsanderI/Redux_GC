@@ -5,9 +5,9 @@ import Сities from '../Сities';
 import * as citiesActions from './weather.actions';
 import { isCitiesSelector } from './weather.selectors';
 
-const Weather = ({ cityData, fetchUserDate }) => {
+const Weather = ({ cityData, getWeatherData }) => {
   if (!cityData) {
-    fetchUserDate();
+    getWeatherData();
     return null;
   }
 
@@ -24,7 +24,7 @@ const Weather = ({ cityData, fetchUserDate }) => {
 };
 
 Weather.propTypes = {
-  fetchUserDate: PropTypes.func.isRequired,
+  getWeatherData: PropTypes.func.isRequired,
   cityData: PropTypes.array,
 };
 
@@ -37,7 +37,7 @@ const mapState = state => ({
 });
 
 const mapDispatch = {
-  fetchUserDate: citiesActions.fetchUserDate,
+  getWeatherData: citiesActions.getWeatherData,
 };
 
 export default connect(mapState, mapDispatch)(Weather);
