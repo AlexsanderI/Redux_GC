@@ -1,36 +1,43 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Сities from '../Сities';
-import { fetchTaskList } from '../Gateway';
+import * as citiesActions from '../cities/cities.actions';
+import { isCitiesSelector } from '../cities/cities.selectors';
 
-class Weather extends React.Component {
-  state = {
-    cities: [],
-  };
-
-  componentDidMount() {
-    this.fetchTask();
+const Weather = ({ cityData, fetchUserDate }) => {
+  if (!cityData) {
+    fetchUserDate();
+    return null;
   }
 
-  fetchTask = () => {
-    fetchTaskList().then(tasksList =>
-      this.setState({
-        cities: tasksList,
-      }),
-    );
-  };
+  return (
+    <main className="weather">
+      <h1 className="weather__title">Weather data</h1>
+      <ul className="cities-list">
+        {cityData.map(city => (
+          <Сities key={city.id} {...city} />
+        ))}
+      </ul>
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className="weather">
-        <h1 className="weather__title">Weather data</h1>
-        <ul className="cities-list">
-          {this.state.cities.map(city => (
-            <Сities key={city.id} {...city} />
-          ))}
-        </ul>
-      </main>
-    );
-  }
-}
+Weather.propTypes = {
+  fetchUserDate: PropTypes.func.isRequired,
+  cityData: PropTypes.array,
+};
 
-export default Weather;
+Weather.defaultValue = {
+  cityData: null,
+};
+
+const mapState = state => ({
+  cityData: isCitiesSelector(state),
+});
+
+const mapDispatch = {
+  fetchUserDate: citiesActions.fetchUserDate,
+};
+
+export default connect(mapState, mapDispatch)(Weather);

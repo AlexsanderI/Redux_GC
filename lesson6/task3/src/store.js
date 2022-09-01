@@ -1,14 +1,13 @@
-import { createStore } from 'redux';
-// import usersListReducer from './users/users.reducer';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import citiesReducer from './cities/cities.reducer';
 
-// const appReducer = combineReducers({
-//   users: usersListReducer,
-// });
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  // usersListReducer,
+  citiesReducer,
 
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  composeEnhancers(applyMiddleware(thunk)),
 );
 
 export default store;

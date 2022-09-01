@@ -1,5 +1,3 @@
-export const isFetchingSelector = state => state.users.isFetching;
+export const isCitiesSelector = state => state.cityData;
 
-export const userDateSelector = state => state.users.userData;
-
-export const fetchUserDate = state => state.users.userData;
+export const weatherDataSelector = state => state.weatherData;
