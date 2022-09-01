@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Сities from '../Сities';
-import * as citiesActions from '../cities/cities.actions';
-import { isCitiesSelector } from '../cities/cities.selectors';
+import * as citiesActions from './cities.actions';
+import { isCitiesSelector } from './cities.selectors';
 
 const Weather = ({ cityData, fetchUserDate }) => {
   if (!cityData) {
