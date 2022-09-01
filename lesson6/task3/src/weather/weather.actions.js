@@ -1,4 +1,4 @@
-import { getUserData } from './weather.getway';
+import { getUserData } from './weather.gateway';
 
 export const CITIES_DATE_RECIEVED = 'CITIES_DATE_RECIEVED';
 
